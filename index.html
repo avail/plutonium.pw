@@ -9,16 +9,16 @@
             margin: 0px;
             padding: 0px;
         }
-        
+
         * {
             box-sizing: border-box;
         }
-        
+
         .hero {
             background: black;
             color: white;
         }
-        
+
         .hero__inner {
             width: 100%;
             max-width: 940px;
@@ -27,14 +27,14 @@
             align-items: center;
             padding: 65px 20px;
         }
-        
+
         .hero__title {
             font-family: Circular-Black, sans-serif;
             font-weight: 900;
             font-size: 54px;
             line-height: 60px;
         }
-        
+
         .hero__body {
             margin: 15px 0;
             line-height: 24px;
@@ -42,7 +42,7 @@
             color: #FFFFFF;
             display: block;
         }
-        
+
         .btn {
             color: black;
             background: white;
@@ -54,56 +54,56 @@
             line-height: 45px;
             display: inline-block;
         }
-        
+
         .btns {
             margin-top: 30px;
         }
-        
+
         .btns > * {
             margin-right: 15px;
             margin-bottom: 15px;
         }
-        
+
         .btn:hover {
             background: #d9d9d9;
         }
-        
+
         .btn--discord {
             background: #6F85D6;
             color: white;
         }
-        
+
         .btn--discord:hover {
             background: #6372c5;
         }
-        
+
         .btn--dl {
             background: #009688;
             color: white;
         }
-        
+
         .btn--dl:hover {
             background: #007367;
         }
-        
+
         .selling-points {
             background-image: linear-gradient(-90deg, #272928 0%, #454a46 100%);
             color: white;
         }
-        
+
         .selling-points__inner {
             width: 100%;
             max-width: 940px;
             margin: 0 auto;
             padding: 30px 10px;
         }
-        
+
         .selling-points__title {
             font-family: Circular-Medium, sans-serif;
             font-size: 28px;
             text-align: center;
         }
-        
+
         .footer {
             padding: 30px 25px;
             background: #272928;
@@ -111,7 +111,7 @@
             font-size: 14px;
             text-align: center;
         }
-        
+
         /* tablet */
         @media (max-width: 735px) {
             .hero__title {
@@ -119,14 +119,14 @@
                 line-height: 50px;
             }
         }
-        
+
         /* mobile */
         @media (max-width:615px) {
             .hero__inner {
                 flex-direction: column;
             }
         }
-        
+
         /* tiny mobile */
         @media (max-width:420px) {
             .btn {
@@ -176,8 +176,41 @@
 
     <section class="footer">
         <p>Trademarks used are owned by their respective owners. This mod is not endorsed or affiliated with the copyright holders of the base game in any form.</p>
-        <p>Made with <img height="20" width="20" src="angry_joy.png" align="top" /> by boomers for millennials.</p>
+        <p>Made with <img height="20" width="20" src="angry_joy.png" align="top" onclick="uwuify()" /> by boomers for millennials.</p>
     </section>
 </body>
+
+<script type="text/javascript">
+const faces = ['(*^ω^)', '(◕‿◕✿)', '(◕ᴥ◕)', 'ʕ•ᴥ•ʔ', 'ʕ￫ᴥ￩ʔ', '(*^.^*)', 'owo', '(｡♥‿♥｡)', 'uwu', '(*￣з￣)', '>w<', '^w^', '(つ✧ω✧)つ', '(/ =ω=)/'];
+
+function uwu(string)
+{
+	if (string.startsWith("Made with")) return string;
+
+	string = string.replace('th','d');
+	string = string.replace('Th','D');
+	string = string.replace(' is',' ish');
+	string = string.replace(' Is',' Ish');
+	string = string.replace(/(?:l|r)/g, 'w');
+	string = string.replace(/(?:L|R)/g, 'W');
+	string = string.replace(/n([aeiou])/g, 'ny$1');
+	string = string.replace(/N([aeiou])/g, 'Ny$1');
+	string = string.replace(/N([AEIOU])/g, 'Ny$1');
+	string = string.replace(/ove/g, 'uv');
+	string = string.replace('!', ` ${faces[Math.floor(Math.random() * faces.length)]} `);
+	string = string.replace('.', ` ${faces[Math.floor(Math.random() * faces.length)]} `);
+	string = string.replace(',', ` ${faces[Math.floor(Math.random() * faces.length)]} `);
+
+	return string;
+}
+
+function uwuify()
+{
+	document.querySelectorAll("p").forEach(function(node)
+	{
+		node.innerHTML = uwu(node.innerHTML);
+	});
+}
+</script>
 
 </html>
